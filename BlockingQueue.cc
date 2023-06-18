@@ -1,3 +1,5 @@
+// 在 linux 平台上，通过 `g++ BlockingQueue.cc -std=c++17 -lpthread` 编译即可
+
 #include <queue>
 #include <mutex>
 #include <condition_variable>
