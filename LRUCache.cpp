@@ -2,23 +2,22 @@
 #include <sstream>
 #include <unordered_map>
 
-
 class Node{
 public:
     Node(int k, int v): key(k), val(v) {
         prev = next = nullptr;
     }
 
-    int key;
-    int val;
-    Node* prev;
-    Node* next;
-
     std::string toString() {
         std::stringstream ss;
         ss << "{ " << key << ": " << val << "}";
         return ss.str();
     }
+
+    int key;
+    int val;
+    Node* prev;
+    Node* next;
 };
 
 // could only store 0 and positive numbers
@@ -33,7 +32,6 @@ class LRUCache {
 
         ~LRUCache() {
             release(head_);
-
         }
 
         int get(int key) {
@@ -114,7 +112,6 @@ class LRUCache {
         Node* head_;
         Node* tail_;
         std::unordered_map<int, Node*> index_;
-
 };
 
 
