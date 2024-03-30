@@ -18,6 +18,7 @@ class TCP {
 public:
     TCP() {
         nextOffset_ = 0;
+        finished_ = false;
     }
 
     size_t read(void *buf, size_t count) {
