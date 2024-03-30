@@ -70,7 +70,9 @@ class LRUCache {
 
             if (index_.size() > cap_) {
                 auto to_del = detach(tail_->prev);
-                index_.erase(to_del->key);
+                if (to_del-> key != key) { // easy to have bug here
+                    index_.erase(to_del->key);
+                }
                 delete to_del;
             }
         }
